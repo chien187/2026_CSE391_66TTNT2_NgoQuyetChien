@@ -1,21 +1,17 @@
-/* =========================================
-   CÀI ĐẶT CHUNG (BODY)
-   ========================================= */
+
 body {
   margin: 0;
   font-family: 'Quicksand', sans-serif;
   color: #333;
 }
 
-/* =========================================
-   PHẦN HEADER & ĐIỀU HƯỚNG (NAV)
-   ========================================= */
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  position: absolute; /* Cho phép ảnh hero chìm xuống dưới header */
+  position: absolute; 
   width: 90%;
   z-index: 10;
 }
@@ -23,7 +19,7 @@ header {
 #page-logo a {
   font-family: 'Oleo Script', cursive;
   font-size: 2rem;
-  color: #ffeb3b; /* Màu vàng theo thiết kế */
+  color: #ffeb3b; 
   text-decoration: none;
 }
 
@@ -42,9 +38,8 @@ nav a {
 
 #hero {
   height: 80vh;
-  /* Lớp phủ màu đen mờ giúp chữ nổi bật hơn trên nền ảnh */
   background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                    url('hero.png'); /* Cập nhật lại đường dẫn ảnh ván chèo của bạn */
+  url('hero.png'); 
   background-size: cover;
   background-position: center;
   display: flex;
@@ -81,13 +76,12 @@ nav a {
   font-weight: bold;
 }
 
-/* =========================================
-   PHẦN NỔI BẬT (HIGHLIGHTS)
-   ========================================= */
+
 #highlights {
-  padding: 4rem 5%;
-  background-color: #e0f7fa; /* Màu nền xanh nhạt */
   text-align: center;
+  padding: 4rem 5%;
+  background-color: #e0f7fa; 
+  color: #333;
 }
 
 #highlights h2 {
@@ -120,12 +114,11 @@ nav a {
 }
 
 .destination strong {
-  color: #00acc1; /* Màu xanh nhấn mạnh cho tên quốc gia */
+  color: #00acc1; 
 }
 
-/* =========================================
-   PHẦN CHÂN TRANG (FOOTER)
-   ========================================= */
+
+   
 footer {
   background-color: #1a1a1a;
   padding: 2rem;
@@ -144,5 +137,5 @@ footer ul {
 footer img {
   width: 40px;
   height: 40px;
-  filter: invert(1); /* Chuyển icon màu đen thành trắng nếu ảnh gốc màu đen */
+
 }
