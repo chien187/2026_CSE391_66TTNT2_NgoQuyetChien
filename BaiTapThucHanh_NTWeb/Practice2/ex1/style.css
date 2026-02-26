@@ -1,0 +1,59 @@
+/* Container chính */
+.contact-container {
+    border: 1px solid #333;
+    padding: 30px;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.contact-container h2 {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Thiết lập Form là một Flex container theo chiều dọc */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Khoảng cách giữa các hàng */
+}
+
+/* Thiết lập từng hàng là Flex container */
+.form-row {
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa 2 ô input ở hàng đầu */
+}
+
+/* Các ô input và textarea sẽ co giãn đều */
+.form-row input, 
+.form-row textarea {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    outline: none;
+    color: #666;
+}
+
+/* Hàng cuối cùng: Đẩy nút và text sang 2 bên */
+.form-footer {
+    display: flex;
+    justify-content: space-between; /* Đẩy button sang trái, span sang phải */
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form-footer button {
+    background-color: #87cefa;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-footer span {
+    color: #888;
+    font-size: 14px;
+}
