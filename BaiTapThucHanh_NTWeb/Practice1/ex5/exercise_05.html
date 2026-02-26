@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>HR Management</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="nav-container">
+            <div class="logo">HR Management</div>
+            <div class="menu-links">
+                <a href="#">Home</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <div class="header-row">
+                <h2>Employee</h2>
+                <button class="btn-add" onclick="showModal()">+ Add</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Position</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Fatima Beatriz</td>
+                        <td>Fatima Beatriz@gmail.com</td>
+                        <td>0985674321</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Gabriel Hanna</td>
+                        <td>Gabriel Hanna@gmail.com</td>
+                        <td>0985674322</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Charles Diya</td>
+                        <td>charles.diya@gmail.com</td>
+                        <td>0985674323</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Frank Lamdo</td>
+                        <td>frank.lamdo@gmail.com</td>
+                        <td>0985674324</td>
+                        <td>Manager</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Louis Tom</td>
+                        <td>louis.tom@gmail.com</td>
+                        <td>0985674325</td>
+                        <td>Staff</td>
+                        <td>
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modalOverlay" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span>New Employee</span>
+                <span class="close-x" onclick="hideModal()">&times;</span>
+            </div>
+            <form class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-group">
+                        <label>Position</label>
+                        <select>
+                            <option>-- Select Position --</option>
+                            <option>Staff</option>
+                            <option>Manager</option>
+                            <option>CEO</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Sex</label>
+                    <div class="radio-group">
+                        <input type="radio" name="sex"> Male
+                        <input type="radio" name="sex" style="margin-left: 10px;"> Female
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-save">Save</button>
+                    <button type="button" class="btn-cancel" onclick="hideModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showModal() {
+            document.getElementById("modalOverlay").style.display = "flex";
+        }
+        function hideModal() {
+            document.getElementById("modalOverlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>
