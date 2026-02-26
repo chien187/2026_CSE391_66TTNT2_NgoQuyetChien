@@ -1,0 +1,148 @@
+/* =========================================
+   CÀI ĐẶT CHUNG (BODY)
+   ========================================= */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+}
+
+/* =========================================
+   PHẦN HEADER & ĐIỀU HƯỚNG (NAV)
+   ========================================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: absolute; /* Cho phép ảnh hero chìm xuống dưới header */
+  width: 90%;
+  z-index: 10;
+}
+
+#page-logo a {
+  font-family: 'Oleo Script', cursive;
+  font-size: 2rem;
+  color: #ffeb3b; /* Màu vàng theo thiết kế */
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+
+#hero {
+  height: 80vh;
+  /* Lớp phủ màu đen mờ giúp chữ nổi bật hơn trên nền ảnh */
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                    url('hero.png'); /* Cập nhật lại đường dẫn ảnh ván chèo của bạn */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+#hero-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  border-radius: 8px;
+}
+
+#hero-content h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+}
+
+#hero-content p {
+  font-size: 1.2rem;
+  margin: 1rem 0 2rem 0;
+}
+
+#hero-content a {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #ffeb3b;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* =========================================
+   PHẦN NỔI BẬT (HIGHLIGHTS)
+   ========================================= */
+#highlights {
+  padding: 4rem 5%;
+  background-color: #e0f7fa; /* Màu nền xanh nhạt */
+  text-align: center;
+}
+
+#highlights h2 {
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+#destinations {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+.destination img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.destination p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.destination strong {
+  color: #00acc1; /* Màu xanh nhấn mạnh cho tên quốc gia */
+}
+
+/* =========================================
+   PHẦN CHÂN TRANG (FOOTER)
+   ========================================= */
+footer {
+  background-color: #1a1a1a;
+  padding: 2rem;
+  text-align: center;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer img {
+  width: 40px;
+  height: 40px;
+  filter: invert(1); /* Chuyển icon màu đen thành trắng nếu ảnh gốc màu đen */
+}
