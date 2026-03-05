@@ -195,8 +195,8 @@ function tinhDiemTrungBinh(m1, m2, m3) {
 
 #### Bước 1: Đoán trước – chạy sau
 
-> a) Nếu `score = 9`, em dự đoán console sẽ in: ........................
-> b) Nếu `score = 6`, em dự đoán console sẽ in: ........................
+> a) Nếu `score = 9`, em dự đoán console sẽ in: Giỏi
+> b) Nếu `score = 6`, em dự đoán console sẽ in: Trung bình
 
 Sau đó:
 
@@ -204,21 +204,20 @@ Sau đó:
 2. Thay `score = 6`, kiểm tra lại.
 
 > So sánh dự đoán và kết quả thực tế:
-> - Trường hợp `score = 9`: Dự đoán vs Thực tế: ........................
-> - Trường hợp `score = 6`: Dự đoán vs Thực tế: ........................
+> - Trường hợp `score = 9`: Dự đoán vs Thực tế:Đúng với thực tế
+> - Trường hợp `score = 6`: Dự đoán vs Thực tế:Đúng với thực tế
 
 ---
 
 #### Bước 2: Mô tả lại if/else bằng lời
 
 > - Khi nào chương trình in `"Giỏi"`?
+    - Khi giá trị của biến score lớn hơn hoặc bằng 8.
 > - Khi nào chương trình in `"Yếu"`?
+    - Khi tất cả các điều kiện bên trên đều sai (tức là score nhỏ hơn 5).
 > - Em hãy mô tả cấu trúc `if/else` bằng lời của em (có thể ví von “ngã rẽ” trong đời sống):
 
-........................................................................
-........................................................................
-
----
+    - Cấu trúc if/else là một lệnh rẽ nhánh,Nếu (if) điều kiện đúng thì thực hiện một hành động, ngược lại/nếu sai (else) thì thực hiện hành động khác. Nó quyết định hướng đi của chương trình dựa trên dữ liệu đầu vào. 
 
 #### Bước 3: Làm việc với hàm
 
@@ -227,8 +226,7 @@ Sau đó:
 tinhDiemTrungBinh(8, 7, 9);
 ```
 
-> Em ghi lại giá trị hàm trả về: ..................................
-
+> Em ghi lại giá trị hàm trả về: 8
 2. Viết thêm hàm `xepLoai(avg)` trong file JS:
 ```js
 function xepLoai(avg) {
@@ -243,18 +241,18 @@ function xepLoai(avg) {
 3. Gọi thử trong console:
 ```js
 let avg = tinhDiemTrungBinh(8, 7, 9);
-let loai = xepLoai(avg);
+  let loai = xepLoai(avg);
 console.log("Điểm TB:", avg, " - Xếp loại:", loai);
 ```
 
 > Câu hỏi:
 > - Một hàm gồm những phần chính nào?
->   - Tên hàm: .................................................
->   - Tham số (parameters): ....................................
->   - Thân hàm (body): .........................................
->   - Giá trị trả về (return): .................................
+>   - Tên hàm: Là danh từ/động từ đại diện cho chức năng của hàm (ví dụ: tinhDiemTrungBinh, xepLoai).
+>   - Tham số (parameters): Là các biến số (như m1, m2, m3 hoặc avg) được truyền vào bên trong dấu ngoặc đơn () để hàm lấy dữ liệu đầu vào tính toán.
+>   - Thân hàm (body):Là toàn bộ phần code logic nằm giữa hai dấu ngoặc nhọn { ... }.
+>   - Giá trị trả về (return): Là kết quả cuối cùng mà hàm "ném" ra ngoài sau khi tính toán xong, thông qua từ khóa return. Nếu không có return, hàm mặc định trả về undefined.
 > - Ưu điểm của việc dùng hàm thay vì lặp lại cùng một đoạn code nhiều lần là gì?
-
+    - Giúp tái sử dụng mã nguồn, làm cho code gọn gàng, dễ đọc và dễ sửa lỗi hơn rất nhiều.
 ---
 
 #### Bước 4: Mở rộng nhỏ (tuỳ chọn)
@@ -276,7 +274,10 @@ Gọi thử: `kiemTraTuoi(16);`, `kiemTraTuoi(20);`.
 #### Bước 5: Phản tư
 
 > - Phần nào trong if/else hoặc hàm khiến em khó hiểu nhất?
+    - Phần khó hiểu nhất trong if/else theo em là xử lý nhiều điều kiện lồng nhau dẫn đến sai logic, hoặc bỏ sót trường hợp else mặc định. Đối với hàm, khó khăn lớn nhất là nắm vững phạm vi biến (biến cục bộ/toàn cục) và hiểu cách tham số được truyền vào (tham trị so với tham chiếu) để tránh lỗi dữ liệu.
+
 > - Em đã làm gì để vượt qua (thử nhiều lần, hỏi bạn, xem lại ví dụ, tra Google, …)?
+    - Em đã hỏi thầy cô giảng viên, bạn của mình và tra Google
 
 ---
 
@@ -324,8 +325,11 @@ btnHello.addEventListener("click", function () {
 
 > Câu hỏi:
 > - `document.getElementById("status")` đang làm gì?
+    - Lệnh này yêu cầu trình duyệt quét toàn bộ tài liệu HTML và lấy phần tử có thuộc tính id chính xác là "status"
 > - Sự kiện `"click"` xảy ra khi nào?
+    - Xảy ra ngay tại khoảnh khắc người dùng nhấn nút chuột trái hoặc chạm vào màn hình cảm ứng lên phần tử đó.
 > - Trong đoạn code trên, khi nhấn nút `btnHello`, điều gì thay đổi trên trang?
+    - Nội dung chữ của thẻ <p id="status"> sẽ bị xóa đi và thay thế ngay lập tức bằng dòng chữ: "Xin chào! Đây là nội dung được thay đổi bằng JavaScript."
 
 ---
 
@@ -344,7 +348,9 @@ btnRed.addEventListener("click", function () {
 
 > Câu hỏi:
 > - Em có thể đổi sang màu khác (vd. `lightblue`) không? Hãy thử.
+    - Có thể đổi sang màu khác.
 > - Em hãy ghi lại 1 ví dụ khác mà JavaScript có thể làm với `document.body.style`.
+    - Có thể đổi màu chữ của toàn bộ trang: document.body.style.color = "white"; hoặc đổi font chữ: document.body.style.fontFamily = "Arial";.
 
 ---
 
@@ -364,7 +370,9 @@ nameInput.addEventListener("input", function () {
 
 > Câu hỏi:
 > - Sự kiện `"input"` khác gì so với `"click"`?
+    - "click" chỉ kích hoạt một lần khi bạn bấm chuột. Trong khi đó, "input" kích hoạt liên tục mỗi khi giá trị trong ô text thay đổi
 > - Khi em xoá hết nội dung ô input, dòng `greeting` hiển thị gì?
+    - Nó sẽ hiển thị: "Xin chào, !". Vì khi ô input trống, biến value sẽ là một chuỗi rỗng "", ghép với chuỗi có sẵn sẽ tạo ra kết quả đó.
 
 ---
 
@@ -374,8 +382,9 @@ nameInput.addEventListener("input", function () {
 >
 > Em hãy:
 > - Tự mô tả DOM bằng lời của em:
->   ................................................................
+>    - Hãy tưởng tượng mã HTML của bạn giống như một bản thiết kế ngôi nhà. DOM chính là việc trình duyệt xây dựng ngôi nhà đó lên thành hình hài thực tế, tạo thành một "cây gia phả". Trong đó document là toàn bộ mảnh đất, <html> là cái móng, <head> và <body> là các tầng, còn các thẻ <p>, <button> là các đồ vật trong phòng. Nhờ có cấu trúc cây này, JavaScript có thể tìm đến chính xác từng "đồ vật" để di chuyển, đổi màu hoặc thay mới chúng.
 > - Nêu 1 ví dụ “thao tác DOM” trong bài (ghi lại 1 dòng lệnh cụ thể).
+    - Dòng lệnh: document.body.style.backgroundColor = "red"; hoặc greeting.textContent = "Xin chào, " + value + "!";
 
 ---
 
@@ -384,9 +393,13 @@ nameInput.addEventListener("input", function () {
 Hãy chụp các ảnh màn hình:
 
 1. Khi vừa tải trang (chưa tương tác).
+    ![alt text](image.png)
 2. Sau khi nhấn “Chào”.
+    ![alt text](image-1.png)
 3. Sau khi đổi nền sang màu đỏ.
+    ![alt text](image-2.png)
 4. Khi gõ tên và nhìn thấy lời chào xuất hiện.
+    ![alt text](image-3.png)
 
 *(Ảnh có thể được yêu cầu nộp cùng bài hoặc dán vào báo cáo)*
 
@@ -412,11 +425,14 @@ $("#btnHello").on("click", function () {
 
 > Câu hỏi:
 > - Điểm giống nhau về chức năng giữa 2 đoạn code trên là gì?
+    - Cả hai đoạn code đều làm cùng một nhiệm vụ: Tìm cái nút có id là btnHello, gắn một bộ lắng nghe sự kiện click chuột vào đó, và khi click thì bật lên một hộp thoại    thông báo
 > - Điểm khác nhau về cú pháp là gì (`document.getElementById` vs `$("#id")`, `addEventListener` vs `.on`)?
-> - Em hãy tra cứu nhanh “What is jQuery used for?” và ghi 2 ý chính:
->   1. ................................................................
->   2. ................................................................
+    - Khai báo phần tử: JS thuần dùng lệnh rất dài document.getElementById("btnHello"), trong khi jQuery rút gọn lại chỉ còn $("#btnHello").
 
+     Gắn sự kiện: JS thuần dùng .addEventListener("click", ...), jQuery dùng hàm .on("click", ...). Nhìn chung, jQuery ra đời để giúp viết code ngắn gọn và dễ đọc hơn rất nhiều.
+> - Em hãy tra cứu nhanh “What is jQuery used for?” và ghi 2 ý chính:
+>   1. Thao tác DOM, xử lý sự kiện và tạo hiệu ứng hoạt hình (animation) một cách dễ dàng, ngắn gọn trên mọi trình duyệt.
+>   2. Đơn giản hóa việc gọi API/AJAX (lấy dữ liệu từ máy chủ mà không cần tải lại trang). (Tuy nhiên, hiện nay JS thuần đã phát triển rất mạnh mẽ nên jQuery không còn được sử dụng nhiều trong các dự án mới như trước đây).
 ---
 
 ### 6.2. Tự đánh giá \& định hướng
@@ -424,9 +440,9 @@ $("#btnHello").on("click", function () {
 > 1. Sau buổi lab, em tò mò nhất về phần nào của JavaScript/DOM?
 > 2. Em muốn tự làm thêm tính năng gì trên trang web (vd: bộ đếm, đổi theme, pop-up, mini game, …)?
 > 3. Em đánh giá mức độ hiểu của mình về:
->    - Biến \& kiểu dữ liệu: [ ] Chưa hiểu  [ ] Tạm ổn  [ ] Khá rõ
->    - If/else \& hàm:       [ ] Chưa hiểu  [ ] Tạm ổn  [ ] Khá rõ
->    - DOM \& sự kiện:       [ ] Chưa hiểu  [ ] Tạm ổn  [ ] Khá rõ
+>    - Biến \& kiểu dữ liệu: [ ] Chưa hiểu  [ x] Tạm ổn  [ ] Khá rõ
+>    - If/else \& hàm:       [ ] Chưa hiểu  [x ] Tạm ổn  [ ] Khá rõ
+>    - DOM \& sự kiện:       [ x] Chưa hiểu  [ ] Tạm ổn  [ ] Khá rõ
 
 ---
 
