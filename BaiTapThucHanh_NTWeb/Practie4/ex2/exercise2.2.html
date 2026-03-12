@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đặt Hàng Nâng Cao</title>
+    <link rel="stylesheet" href="style2.2.css">
+</head>
+<body>
+
+    <div class="container">
+        <form id="orderForm">
+            <h2>Đặt Hàng Trực Tuyến</h2>
+            
+            <div class="form-group">
+                <label for="product">Sản phẩm:</label>
+                <select id="product">
+                    <option value="">-- Chọn sản phẩm --</option>
+                    <option value="ao_thun">Áo Thun Cao Cấp</option>
+                    <option value="quan_jean">Quần Jean Phong Cách</option>
+                    <option value="giay_sneaker">Giày Sneaker Thể Thao</option>
+                </select>
+                <small class="error-msg" id="productError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Số lượng (1-99):</label>
+                <input type="number" id="quantity" min="1" max="99" value="1">
+                <small class="error-msg" id="quantityError"></small>
+            </div>
+
+            <div class="total-price-box">
+                Tổng tiền: <strong id="totalPriceDisplay">0 VNĐ</strong>
+            </div>
+
+            <div class="form-group">
+                <label for="deliveryDate">Ngày giao hàng:</label>
+                <input type="date" id="deliveryDate">
+                <small class="error-msg" id="deliveryDateError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Địa chỉ giao hàng:</label>
+                <textarea id="address" rows="3" placeholder="Nhập địa chỉ chi tiết (tối thiểu 10 ký tự)"></textarea>
+                <small class="error-msg" id="addressError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Ghi chú:</label>
+                <textarea id="notes" rows="2" placeholder="Ghi chú thêm (không bắt buộc)"></textarea>
+                <div style="text-align: right; font-size: 0.85em; color: #666;">
+                    <span id="noteCounter">0/200</span>
+                </div>
+                <small class="error-msg" id="notesError"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Phương thức thanh toán:</label>
+                <div class="radio-group">
+                    <input type="radio" id="payCOD" name="payment" value="COD">
+                    <label for="payCOD">Thanh toán khi nhận hàng (COD)</label><br>
+                    
+                    <input type="radio" id="payBank" name="payment" value="Chuyển khoản">
+                    <label for="payBank">Chuyển khoản ngân hàng</label><br>
+                    
+                    <input type="radio" id="payWallet" name="payment" value="Ví điện tử">
+                    <label for="payWallet">Ví điện tử</label>
+                </div>
+                <small class="error-msg" id="paymentError"></small>
+            </div>
+
+            <button type="submit" id="submitBtn">Tiến Hành Đặt Hàng</button>
+        </form>
+
+        <div id="confirmBox" class="hidden box-overlay">
+            <h3>Xác nhận đơn hàng</h3>
+            <ul>
+                <li><strong>Sản phẩm:</strong> <span id="confProduct"></span></li>
+                <li><strong>Số lượng:</strong> <span id="confQuantity"></span></li>
+                <li><strong>Tổng tiền:</strong> <span id="confTotal" style="color: #e74c3c; font-weight: bold;"></span></li>
+                <li><strong>Ngày giao:</strong> <span id="confDate"></span></li>
+            </ul>
+            <p>Bạn có chắc chắn muốn đặt đơn hàng này?</p>
+            <div class="btn-group">
+                <button id="cancelBtn" class="btn-secondary">Hủy</button>
+                <button id="confirmBtn" class="btn-primary">Xác nhận</button>
+            </div>
+        </div>
+
+        <div id="successBox" class="hidden text-center">
+            <h2 style="color: #28a745;">🎉 Đặt hàng thành công!</h2>
+            <p>Cảm ơn bạn đã mua sắm. Đơn hàng sẽ được giao đến bạn đúng hẹn.</p>
+        </div>
+    </div>
+
+    <script src="2.2.js"></script>
+</body>
+</html>
