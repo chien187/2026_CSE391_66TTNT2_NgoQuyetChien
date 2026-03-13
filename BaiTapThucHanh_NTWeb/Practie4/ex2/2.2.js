@@ -1,11 +1,11 @@
-// ================= DATA SẢN PHẨM & TIỆN ÍCH =================
+
 const prices = {
     "ao_thun": 150000,
     "quan_jean": 300000,
     "giay_sneaker": 500000
 };
 
-// Hàm định dạng tiền tệ VNĐ
+
 function formatCurrency(amount) {
     return Number(amount).toLocaleString("vi-VN") + " VNĐ";
 }
@@ -26,7 +26,6 @@ function clearError(fieldId) {
     if (inputEl) inputEl.classList.remove('is-invalid');
 }
 
-// ================= CÁC HÀM VALIDATE =================
 function validateProduct() {
     const val = document.getElementById('product').value;
     if (val === "") {
@@ -55,7 +54,6 @@ function validateDate() {
         return false;
     }
 
-    // Xử lý chuẩn hóa thời gian về 00:00:00 để so sánh cho chính xác
     const selectedDate = new Date(dateInput);
     selectedDate.setHours(0, 0, 0, 0);
 
@@ -63,7 +61,7 @@ function validateDate() {
     today.setHours(0, 0, 0, 0);
 
     const maxDate = new Date(today);
-    maxDate.setDate(today.getDate() + 30); // Ngày tối đa là +30 ngày
+    maxDate.setDate(today.getDate() + 30); 
 
     if (selectedDate < today) {
         showError('deliveryDate', 'Không được chọn ngày trong quá khứ.');
@@ -96,7 +94,6 @@ function validateNotes() {
         showError('notes', 'Ghi chú không được vượt quá 200 ký tự.');
         return false;
     }
-    // Ghi chú không bắt buộc nên bỏ trống vẫn hợp lệ
     clearError('notes');
     return true;
 }
@@ -114,9 +111,7 @@ function validatePayment() {
     return true;
 }
 
-// ================= TÍNH TOÁN & REALTIME EVENTS =================
 
-// Hàm tự động tính tổng tiền
 function calculateTotal() {
     const productKey = document.getElementById('product').value;
     const quantity = parseInt(document.getElementById('quantity').value, 10);
@@ -130,7 +125,6 @@ function calculateTotal() {
     }
 }
 
-// Gắn event để tính tiền ngay khi thay đổi Sản phẩm hoặc Số lượng
 document.getElementById('product').addEventListener('change', () => {
     validateProduct();
     calculateTotal();
@@ -141,7 +135,6 @@ document.getElementById('quantity').addEventListener('input', () => {
     calculateTotal();
 });
 
-// Đếm ký tự realtime cho Ghi chú
 document.getElementById('notes').addEventListener('input', function() {
     const len = this.value.length;
     const counterSpan = document.getElementById('noteCounter');
@@ -150,14 +143,13 @@ document.getElementById('notes').addEventListener('input', function() {
     
     if (len > 200) {
         counterSpan.style.color = 'red';
-        validateNotes(); // Hiển thị lỗi ngay lập tức
+        validateNotes(); 
     } else {
         counterSpan.style.color = '#666';
-        clearError('notes'); // Xóa lỗi nếu quay lại mức an toàn
+        clearError('notes'); 
     }
 });
 
-// Xóa lỗi và validate khi blur/input cho các trường còn lại
 const fieldsToValidate = [
     { id: 'quantity', func: validateQuantity },
     { id: 'deliveryDate', func: validateDate },
@@ -170,11 +162,9 @@ fieldsToValidate.forEach(item => {
     el.addEventListener('input', () => clearError(item.id));
 });
 
-// Xóa lỗi radio khi change
 const radios = document.querySelectorAll('input[name="payment"]');
 radios.forEach(radio => radio.addEventListener('change', () => document.getElementById('paymentError').textContent = ''));
 
-// ================= XỬ LÝ SUBMIT & XÁC NHẬN =================
 const form = document.getElementById('orderForm');
 const confirmBox = document.getElementById('confirmBox');
 const successBox = document.getElementById('successBox');
@@ -182,7 +172,6 @@ const successBox = document.getElementById('successBox');
 form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Dùng Bitwise & để ép tất cả các hàm validate cùng chạy
     const isValid = validateProduct() 
                   & validateQuantity() 
                   & validateDate() 
@@ -191,14 +180,12 @@ form.addEventListener('submit', function(event) {
                   & validatePayment();
 
     if (isValid) {
-        // Lấy dữ liệu đẩy vào bảng xác nhận
         const productSelect = document.getElementById('product');
         const productName = productSelect.options[productSelect.selectedIndex].text;
         const qty = document.getElementById('quantity').value;
         const totalVal = document.getElementById('totalPriceDisplay').textContent;
         const dDate = document.getElementById('deliveryDate').value;
 
-        // Định dạng lại ngày giao hàng cho đẹp (DD/MM/YYYY)
         const dateObj = new Date(dDate);
         const formattedDate = `${dateObj.getDate().toString().padStart(2, '0')}/${(dateObj.getMonth() + 1).toString().padStart(2, '0')}/${dateObj.getFullYear()}`;
 
@@ -207,19 +194,16 @@ form.addEventListener('submit', function(event) {
         document.getElementById('confTotal').textContent = totalVal;
         document.getElementById('confDate').textContent = formattedDate;
 
-        // Ẩn nút Submit tạm thời và hiện box xác nhận
         document.getElementById('submitBtn').style.display = 'none';
         confirmBox.classList.remove('hidden');
     }
 });
 
-// Xử lý nút Hủy trong box xác nhận
 document.getElementById('cancelBtn').addEventListener('click', function() {
     confirmBox.classList.add('hidden');
     document.getElementById('submitBtn').style.display = 'block';
 });
 
-// Xử lý nút Xác nhận cuối cùng
 document.getElementById('confirmBtn').addEventListener('click', function() {
     form.classList.add('hidden');
     confirmBox.classList.add('hidden');

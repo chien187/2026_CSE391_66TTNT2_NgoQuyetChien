@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Tài Khoản</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="successMessage" class="hidden">
+            <h2>Đăng ký thành công! 🎉</h2>
+            <p>Chào mừng <strong id="registeredName"></strong> đã đến với hệ thống.</p>
+        </div>
+
+        <form id="registerForm">
+            <h2>Đăng Ký Tài Khoản</h2>
+            
+            <div class="form-group">
+                <label for="fullname">Họ và tên:</label>
+                <input type="text" id="fullname" placeholder="Nhập họ và tên" maxlength="50">
+                <div style="text-align: right; font-size: 0.85em; color: #666;">
+                    <span id="nameCounter">0/50</span>
+                </div>
+                <small class="error-msg" id="fullnameError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="name@domain.com">
+                <small class="error-msg" id="emailError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="text" id="phone" placeholder="Bắt đầu bằng số 0 (10 số)">
+                <small class="error-msg" id="phoneError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Mật khẩu:</label>
+                
+                <div style="position: relative;">
+                    <input type="password" id="password" placeholder="Tối thiểu 8 ký tự, 1 HOA, 1 thường, 1 số" style="padding-right: 40px; box-sizing: border-box;">
+                    <button type="button" id="togglePassword" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; color: #555; padding: 0; width: auto; margin: 0; font-size: 1.2em;">👁️</button>
+                </div>
+                
+                <div style="height: 5px; background-color: #eee; margin-top: 8px; border-radius: 3px; overflow: hidden;">
+                    <div id="strengthBar" style="height: 100%; width: 0%; transition: width 0.3s ease, background-color 0.3s ease;"></div>
+                </div>
+                <small id="strengthText" style="font-size: 0.85em; display: block; margin-top: 3px; font-weight: bold;"></small>
+                
+                <small class="error-msg" id="passwordError"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Xác nhận mật khẩu:</label>
+                <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                <small class="error-msg" id="confirmPasswordError"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Giới tính:</label>
+                <div class="radio-group">
+                    <input type="radio" id="male" name="gender" value="Nam">
+                    <label for="male">Nam</label>
+                    <input type="radio" id="female" name="gender" value="Nữ">
+                    <label for="female">Nữ</label>
+                </div>
+                <small class="error-msg" id="genderError"></small>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms">
+                <label for="terms">Tôi đồng ý với các điều khoản sử dụng</label>
+                <small class="error-msg" id="termsError" style="display: block;"></small>
+            </div>
+
+            <button type="submit" id="submitBtn">Đăng Ký</button>
+        </form>
+    </div>
+
+    <script src="ex1.js"></script>
+</body>
+</html>

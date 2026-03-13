@@ -13,7 +13,7 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     width: 100%;
     max-width: 500px;
-    position: relative; /* Để chứa box xác nhận */
+    position: relative; 
 }
 
 h2, h3 { color: #333; margin-top: 0; }
@@ -64,7 +64,6 @@ button[type="submit"]:hover, .btn-primary:hover { background-color: #0056b3; }
 .hidden { display: none !important; }
 .text-center { text-align: center; }
 
-/* Styling cho hộp thoại Xác nhận đè lên trên form */
 .box-overlay {
     background-color: #fff; padding: 20px; border: 2px solid #007bff;
     border-radius: 8px; margin-top: 20px;

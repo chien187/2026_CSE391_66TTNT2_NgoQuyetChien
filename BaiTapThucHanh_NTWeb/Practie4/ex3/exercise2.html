@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Nhiều Bước</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+            <div class="step-indicator">Bước <span id="currentStepText">1</span>/3</div>
+        </div>
+
+        <form id="multiStepForm">
+            <div class="step active" id="step1">
+                <h2>Bước 1: Thông tin cá nhân</h2>
+                
+                <div class="form-group">
+                    <label for="fullname">Họ và tên:</label>
+                    <input type="text" id="fullname" placeholder="Nhập họ và tên">
+                    <small class="error-msg" id="fullnameError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Ngày sinh:</label>
+                    <input type="date" id="dob">
+                    <small class="error-msg" id="dobError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>Giới tính:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="gender" value="Nam"> <label for="male">Nam</label>
+                        <input type="radio" id="female" name="gender" value="Nữ"> <label for="female">Nữ</label>
+                    </div>
+                    <small class="error-msg" id="genderError"></small>
+                </div>
+            </div>
+
+            <div class="step" id="step2">
+                <h2>Bước 2: Thông tin tài khoản</h2>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" placeholder="name@domain.com">
+                    <small class="error-msg" id="emailError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Mật khẩu:</label>
+                    <input type="password" id="password" placeholder="Tối thiểu 8 ký tự">
+                    <small class="error-msg" id="passwordError"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Xác nhận mật khẩu:</label>
+                    <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                    <small class="error-msg" id="confirmPasswordError"></small>
+                </div>
+            </div>
+
+            <div class="step" id="step3">
+                <h2>Bước 3: Xác nhận thông tin</h2>
+                <div class="summary-box">
+                    <p><strong>Họ và tên:</strong> <span id="sumName"></span></p>
+                    <p><strong>Ngày sinh:</strong> <span id="sumDob"></span></p>
+                    <p><strong>Giới tính:</strong> <span id="sumGender"></span></p>
+                    <hr>
+                    <p><strong>Email:</strong> <span id="sumEmail"></span></p>
+                </div>
+                <div class="form-group checkbox-group" style="margin-top: 15px;">
+                    <input type="checkbox" id="terms">
+                    <label for="terms">Tôi xác nhận các thông tin trên là chính xác.</label>
+                    <small class="error-msg" id="termsError" style="display: block;"></small>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" id="prevBtn" class="btn-secondary" style="display: none;">Quay lại</button>
+                <button type="button" id="nextBtn" class="btn-primary">Tiếp theo</button>
+                <button type="submit" id="submitBtn" class="btn-success" style="display: none;">Đăng Ký</button>
+            </div>
+        </form>
+
+        <div id="successMessage" class="hidden text-center" style="margin-top: 20px;">
+            <h2 style="color: #28a745;">🎉 Đăng ký thành công!</h2>
+        </div>
+    </div>
+
+    <script src="ex2.js"></script>
+</body>
+</html>

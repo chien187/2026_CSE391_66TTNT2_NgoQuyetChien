@@ -183,3 +183,51 @@ form.addEventListener('submit', function(event) {
         successDiv.classList.remove('hidden');
     }
 });
+
+document.getElementById('fullname').addEventListener('input', function() {
+    const len = this.value.length;
+    document.getElementById('nameCounter').textContent = `${len}/50`;
+});
+
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const passInput = document.getElementById('password');
+    const currentType = passInput.getAttribute('type');
+    const newType = currentType === 'password' ? 'text' : 'password';
+    
+    passInput.setAttribute('type', newType);
+    
+    this.textContent = newType === 'password' ? '👁️' : '🙈';
+});
+
+document.getElementById('password').addEventListener('input', function() {
+    const val = this.value;
+    const strengthBar = document.getElementById('strengthBar');
+    const strengthText = document.getElementById('strengthText');
+    
+    let strengthScore = 0;
+    
+    if (val.length >= 8) strengthScore += 1;
+    if (val.match(/[a-z]/) && val.match(/[A-Z]/)) strengthScore += 1;
+    if (val.match(/\d/)) strengthScore += 1;
+    if (val.match(/[^a-zA-Z\d]/)) strengthScore += 1;
+
+    if (val.length === 0) {
+        strengthBar.style.width = '0%';
+        strengthText.textContent = '';
+    } else if (strengthScore <= 1) {
+        strengthBar.style.width = '33%';
+        strengthBar.style.backgroundColor = '#dc3545';
+        strengthText.textContent = 'Mức độ: Yếu';
+        strengthText.style.color = '#dc3545';
+    } else if (strengthScore === 2) {
+        strengthBar.style.width = '66%';
+        strengthBar.style.backgroundColor = '#ffc107';
+        strengthText.textContent = 'Mức độ: Trung bình';
+        strengthText.style.color = '#ffc107';
+    } else {
+        strengthBar.style.width = '100%';
+        strengthBar.style.backgroundColor = '#28a745';
+        strengthText.textContent = 'Mức độ: Mạnh';
+        strengthText.style.color = '#28a745';
+    }
+});
