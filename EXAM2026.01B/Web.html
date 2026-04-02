@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo" >Hội Thảo Hub</div>
+            
+            <div class="search-box">
+                <input type="search" id="searchInput" placeholder="Tìm nhanh...">               
+            </div>
+             <div class="menu-links ">
+                <a href="#">Trang chủ</a>
+                <a href="#">Danh sách</a>
+                <a href="#" style="background-color: aliceblue; color: black;">Thêm mới</a>
+                <a href="#">Giới thiệu</a>
+            </div>
+        </div>
+    </nav>
+    <div class="head">
+        <div class="pra">
+            <h1>Bảng điều khiển hội thảo</h1>
+            <h3>Theo dõi lịch, diễn giả và địa điểm các sự kiện.</h3>
+        </div>
+    <div class="nav1">
+        <h4>Lọc danh sách</h4>
+        <input type="search" id="searchInput" placeholder="Gõ để lọc bảng...">
+         <select id="sel" name="sel" required>
+                <option value="">Tất cả</option>
+                 <option value="gda1">Giảng đường A1</option>
+                <option value="ht">Hội trường B</option>
+                 <option value="vp">Văn Phòng TLU</option>
+                 <option value="tt">Trung tâm CNTT</option>
+        </select>
+    </div>   
+    </div>
+
+    <div class="content">
+        <div class="card">
+            <div class="header-row">
+               
+                <button class="btn-add" onclick="openAddModal()">+ Thêm mới</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên hội thảo</th>
+                        <th>Diễn Giả</th>
+                        <th>Email</th>
+                        <th>Ngày tổ chức</th>
+                        <th>Địa điểm</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="employeeData">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="footer" style=" width:100%;   background: white; padding: 2px; ">
+        <div >
+             <div ><h2>Hội thảo Hub</h2></div>
+            <div> <h4>Mã Sinh viên - Lớp - Thi CSE391 3-2026</h4> </div>
+        </div>
+       
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Thêm Hội Thảo Mới</h3>
+                <span class="close-x" onclick="toggleModal(false)">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tên hội thảo</label>
+                        <input type="text" id="inpName" placeholder="Nhập sự kiện">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="inpEmail" placeholder="ngovanchien065@gmail.com">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Diễn giả</label>
+                        <input type="text" id="inpPhone" placeholder="Họ tên diễn giả" >
+                        <label> Ngày tổ chức</label>
+                        <input type="date"id="inPhone">
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <label>Địa điểm</label>
+                        <select id="inpPosition">
+                            <option value="Bệnh viện đa khoa trung ương" >Bệnh viện đa khoa trung ương</option>
+                            <option value="Giảng đường A1">Giảng đường A1</option>
+                            <option value="Trung tâm CNTT">Trung tâm CNTT</option>
+                            <option value="Văn phòng TLU">Văn phòng TLU</option>
+                        </select>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-cancel" onclick="toggleModal(false)">Hủy</button>
+                    <button class="btn-save" onclick="saveEmployee()">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
